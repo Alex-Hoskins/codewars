@@ -47,6 +47,6 @@ function alphabetPosition(text) {
     return characterValueText;
   }
 
-console.log(alphabetPosition("The sunset sets at twelve o' clock."))
-console.log(alphabetPosition("a b c"))
-console.log(alphabetPosition("a a a"))
+// console.log(alphabetPosition("The sunset sets at twelve o' clock."))
+// console.log(alphabetPosition("a b c"))
+// console.log(alphabetPosition("a a a"))
