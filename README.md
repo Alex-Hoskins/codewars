@@ -10,4 +10,5 @@ I am constantly refactoring my code to make it more efficient, easier to read, o
 ## Lessons Learned
 **1)** Using a regex with the match method can help you see if a string contains a certain letter, number, or substring.
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
+
 **2)** Optimize code by not unnecessarily assigning information to variables. This might be better for readability, but may slow down your code significantly when dealing with large sets of data.
