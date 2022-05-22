@@ -12,3 +12,6 @@ I am constantly refactoring my code to make it more efficient, easier to read, o
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
 
 **2)** Optimize code by not unnecessarily assigning information to variables. This might be better for readability, but may slow down your code significantly when dealing with large sets of data.
+
+**3)** You can seperate a sentence that is a string into individual words by using string.split(' ') method. You can pass a variety of arguments into this method. Using ' ' will seperate the string by space.
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
