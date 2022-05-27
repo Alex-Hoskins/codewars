@@ -16,3 +16,5 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 **3)** You can seperate a sentence that is a string into individual words by using string.split(' ') method. You can pass a variety of arguments into this method. Using ' ' will seperate the string by space.
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+
+**4)** When needing to compare or count letters where capitilization doesn't matter, you can us the toLowerCase() or toUpperCase() method making the letters equal.<br/>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
