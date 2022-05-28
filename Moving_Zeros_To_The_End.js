@@ -1,5 +1,6 @@
 // QUESTION: Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
 
+
 // PARAMETER
 // Can the array consist of any data type?
 // RETURN
@@ -14,7 +15,7 @@
 // return arr
 
 function moveZeros(arr) {
-  
+
   let pointer = 0
   for(let i = 0; i < arr.length; i++){
     if(arr[pointer]===0){
