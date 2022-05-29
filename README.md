@@ -18,3 +18,5 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
 
 **4)** When needing to compare or count letters where capitilization doesn't matter, you can us the toLowerCase() or toUpperCase() method making the letters equal.<br/>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+
+**5)** You can remove items from an array and push them to the back by using the splice method. Remember, when using splice it will return an array if you are saving it to a variable.<br/>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
