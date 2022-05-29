@@ -28,3 +28,4 @@ function getCount(str) {
   }
 
 // console.log(getCount('a'))
+// console.log(getCount('aeom'))
