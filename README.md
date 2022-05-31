@@ -20,3 +20,5 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 **4)** When needing to compare or count letters where capitilization doesn't matter, you can us the toLowerCase() or toUpperCase() method making the letters equal.<br/>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
 
 **5)** You can remove items from an array and push them to the back by using the splice method. Remember, when using splice it will return an array if you are saving it to a variable.<br/>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+
+**6)** You can use a hash table in order to store important key value pairs. During lookup, the key is hashed and the resulting hash indicates where the corresponding value is stored.<br/>https://en.wikipedia.org/wiki/Hash_table <br/>https://www.tutorialspoint.com/data_structures_algorithms/hash_data_structure.htm
