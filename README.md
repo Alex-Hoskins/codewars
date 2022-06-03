@@ -23,11 +23,11 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 **6)** You can use a hash table in order to store important key value pairs. During lookup, the key is hashed and the resulting hash indicates where the corresponding value is stored.<br/>https://en.wikipedia.org/wiki/Hash_table <br/>https://www.tutorialspoint.com/data_structures_algorithms/hash_data_structure.htm
 
-**7)** When iterating through an array and you need to go back to the beginning, you should use the value -1 if you are incrementing by one each time. For example:<br/><br/>
-
-for(let i = 0; i < array.length; i++){<br/>
+**7)** When iterating through an array and you need to go back to the beginning, you should use the value -1 if you are incrementing by one each time. For example:
+>for(let i = 0; i < array.length; i++){<br/>
     i=-1<br/>
-}<br/><br/>
-If you you set i to equal 0 within the for loop, then the next iteration would increment by 1 and you would start at index 1.
+}
 
-**8)** You can split a number into individual digits by turning the number into a string and the using the string split method. You can the change the stringed digit back into a number.<br/>https://codehandbook.org/split-number-individual-digits-using-javascript/#:~:text=JavaScript%20split%20method%20can%20be,transform%20each%20letter%20to%20Number.
+If you you set i equal to 0 within the for loop, then the next iteration would increment by 1 and you would start at index 1.
+
+**8)** You can split a number into individual digits by turning the number into a string and the using the string split method. You can the change the stringed digit back into a number.<br/>https://codehandbook.org/split-number-individual-digits-using-javascript/#:~:text=JavaScript%20split%20method%20can%20be,transform%20each%20letter%20to%20Number
