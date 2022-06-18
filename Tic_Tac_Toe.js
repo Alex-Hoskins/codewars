@@ -112,7 +112,31 @@ var tictactoe = function(moves) {
 // console.log(tictactoe([[0,0],[1,1],[2,0],[1,0],[1,2],[2,1],[0,1],[0,2],[2,2]]))
 
 var tictactoeString=function(string){
-    console.log(string)
+    let waysToWinX=0
+    let waysToWinO=0
+    for(let i = 0; i <winningStrings.length;i++){
+        if(string[winningStrings[i][0]]=='X' && string[winningStrings[i][1]]=='X' && string[winningStrings[i][2]]=='e'){
+            waysToWinX++
+        }
+        if(string[winningStrings[i][0]]=='e' && string[winningStrings[i][1]]=='X' && string[winningStrings[i][2]]=='X'){
+            waysToWinX++
+        }
+        if(string[winningStrings[i][0]]=='X' && string[winningStrings[i][1]]=='e' && string[winningStrings[i][2]]=='X'){
+            waysToWinX++
+        }
+        if(string[winningStrings[i][0]]=='O' && string[winningStrings[i][1]]=='O' && string[winningStrings[i][2]]=='e'){
+            waysToWinO++
+        }
+        if(string[winningStrings[i][0]]=='e' && string[winningStrings[i][1]]=='O' && string[winningStrings[i][2]]=='O'){
+            waysToWinO++
+        }
+        if(string[winningStrings[i][0]]=='O' && string[winningStrings[i][1]]=='e' && string[winningStrings[i][2]]=='O'){
+            waysToWinO++
+        }
+    }
+    return([waysToWinX,waysToWinO])
 }
 
-console.log(tictactoeString('06152'))
+console.log(tictactoeString('eeXOeeOeX'))
+console.log(tictactoeString('XeXOOeeeX'))
+console.log(tictactoeString('OeOeXeXee'))
