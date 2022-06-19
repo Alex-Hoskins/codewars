@@ -137,6 +137,51 @@ var tictactoeString=function(string){
     return([waysToWinX,waysToWinO])
 }
 
-console.log(tictactoeString('eeXOeeOeX'))
-console.log(tictactoeString('XeXOOeeeX'))
-console.log(tictactoeString('OeOeXeXee'))
+// console.log(tictactoeString('eeXOeeOeX'))
+// console.log(tictactoeString('XeXOOeeeX'))
+// console.log(tictactoeString('OeOeXeXee'))
+
+var arrayRecursion=function(){
+
+}
+
+var medianSort = function(array){
+    let totalMap = {}
+    let k=0
+    for(let i = 0; i <array.length;i++){
+        let newValues= arrayRecursion(array,i,totalMap,k)
+        totalMap = newValues[0]
+        k= newValues[1]
+    }
+    let median = Math.floor(k/2)
+    console.log('median=',median, 'k=',k)
+    if(k%2==0){
+        median=median-1
+    }
+    console.log(totalMap)
+    return totalMap[median]
+}
+var arrayRecursion=function(array,i,totalMap,k){
+    if(array[i].length>1){
+        for(let j = 0;j<array[i].length;j++){
+            if(array[i][j].length>1){
+                let newValues= arrayRecursion(array[i],j,totalMap,k)
+                totalMap = newValues[0]
+                k= newValues[1]
+            }else{
+            totalMap[k]=k
+            k++
+            }
+        }
+    }else{
+        totalMap[k]=k
+        k++
+        return [totalMap,k]
+    }  
+    return [totalMap,k]
+}
+
+
+
+console.log(medianSort([0,1,2,3,4,5,6,[7,8],9,[10,11],12,13,14,15,16,17,18,[19,[20,21,22,[23,[24]]],[25,26]]]))
+console.log(medianSort([0,1,2,3,4,5,6,[7,8],9,[10,11]]))
