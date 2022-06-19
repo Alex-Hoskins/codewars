@@ -155,10 +155,6 @@ var medianSort = function(array){
     }
     let median = Math.floor(k/2)
     console.log('median=',median, 'k=',k)
-    if(k%2==0){
-        median=median-1
-    }
-    console.log(totalMap)
     return totalMap[median]
 }
 var arrayRecursion=function(array,i,totalMap,k){
@@ -181,7 +177,6 @@ var arrayRecursion=function(array,i,totalMap,k){
     return [totalMap,k]
 }
 
-
-
 console.log(medianSort([0,1,2,3,4,5,6,[7,8],9,[10,11],12,13,14,15,16,17,18,[19,[20,21,22,[23,[24]]],[25,26]]]))
 console.log(medianSort([0,1,2,3,4,5,6,[7,8],9,[10,11]]))
+console.log(medianSort([0,1,2,3,4,5,6,[[7,8],9],10,11]))
