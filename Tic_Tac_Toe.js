@@ -47,16 +47,7 @@ let winningArrays = [
     ]
 ]
 
-let winningStrings=[
-    [0,1,2],
-    [3,4,5],
-    [6,7,8],
-    [0,3,6],
-    [1,4,7],
-    [2,5,8],
-    [0,4,8],
-    [2,4,6]
-]
+
 var moveBoard = function(board, move, player){
     board[move[0]][move[1]]=player
     return board
@@ -111,35 +102,46 @@ var tictactoe = function(moves) {
 // console.log(tictactoe([[0,0],[1,1],[0,1],[0,2],[1,0],[2,0]]))
 // console.log(tictactoe([[0,0],[1,1],[2,0],[1,0],[1,2],[2,1],[0,1],[0,2],[2,2]]))
 
+let winningStrings=[
+    [0,1,2],
+    [4,5,6],
+    [8,9,10],
+    [0,4,8],
+    [1,5,9],
+    [2,6,10],
+    [0,5,10],
+    [2,5,8]
+]
+
 var tictactoeString=function(string){
     let waysToWinX=0
     let waysToWinO=0
     for(let i = 0; i <winningStrings.length;i++){
-        if(string[winningStrings[i][0]]=='X' && string[winningStrings[i][1]]=='X' && string[winningStrings[i][2]]=='e'){
+        if(string[winningStrings[i][0]]=='X' && string[winningStrings[i][1]]=='X' && string[winningStrings[i][2]]==' '){
             waysToWinX++
         }
-        if(string[winningStrings[i][0]]=='e' && string[winningStrings[i][1]]=='X' && string[winningStrings[i][2]]=='X'){
+        if(string[winningStrings[i][0]]==' ' && string[winningStrings[i][1]]=='X' && string[winningStrings[i][2]]=='X'){
             waysToWinX++
         }
-        if(string[winningStrings[i][0]]=='X' && string[winningStrings[i][1]]=='e' && string[winningStrings[i][2]]=='X'){
+        if(string[winningStrings[i][0]]=='X' && string[winningStrings[i][1]]==' ' && string[winningStrings[i][2]]=='X'){
+            console.log('hello')
             waysToWinX++
         }
-        if(string[winningStrings[i][0]]=='O' && string[winningStrings[i][1]]=='O' && string[winningStrings[i][2]]=='e'){
+        if(string[winningStrings[i][0]]=='O' && string[winningStrings[i][1]]=='O' && string[winningStrings[i][2]]==' '){
             waysToWinO++
         }
-        if(string[winningStrings[i][0]]=='e' && string[winningStrings[i][1]]=='O' && string[winningStrings[i][2]]=='O'){
+        if(string[winningStrings[i][0]]==' ' && string[winningStrings[i][1]]=='O' && string[winningStrings[i][2]]=='O'){
             waysToWinO++
         }
-        if(string[winningStrings[i][0]]=='O' && string[winningStrings[i][1]]=='e' && string[winningStrings[i][2]]=='O'){
+        if(string[winningStrings[i][0]]=='O' && string[winningStrings[i][1]]==' ' && string[winningStrings[i][2]]=='O'){
             waysToWinO++
         }
     }
     return([waysToWinX,waysToWinO])
 }
 
-// console.log(tictactoeString('eeXOeeOeX'))
-// console.log(tictactoeString('XeXOOeeeX'))
-// console.log(tictactoeString('OeOeXeXee'))
+// console.log(tictactoeString("X X\n OO\nXOO"))
+
 
 var arrayRecursion=function(){
 
@@ -153,6 +155,7 @@ var medianSort = function(array){
         totalMap = newValues[0]
         k= newValues[1]
     }
+    
     let median = Math.floor(k/2)
     console.log('median=',median, 'k=',k)
     return totalMap[median]
@@ -177,6 +180,127 @@ var arrayRecursion=function(array,i,totalMap,k){
     return [totalMap,k]
 }
 
-console.log(medianSort([0,1,2,3,4,5,6,[7,8],9,[10,11],12,13,14,15,16,17,18,[19,[20,21,22,[23,[24]]],[25,26]]]))
-console.log(medianSort([0,1,2,3,4,5,6,[7,8],9,[10,11]]))
-console.log(medianSort([0,1,2,3,4,5,6,[[7,8],9],10,11]))
+// console.log(medianSort([0,1,2,3,4,5,6,[7,8],9,[10,11],12,13,14,15,16,17,18,[19,[20,21,22,[23,[24]]],[25,26]]]))
+// console.log(medianSort([0,1,2,3,4,5,6,[7,8],9,[10,11]]))
+// console.log(medianSort([0,1,2,3,4,5,6,[[7,8],9],10,11]))
+
+var mixedPotions = function(potions){
+    let potion = {}
+    for(let i =0;i<potions.length;i++){
+        for(key in potions[i]){
+            if(!potion[key]){
+                potion[key]=0
+            }
+            potion[key]+=potions[i][key]
+        }
+    }
+    return potion
+}
+let invisibility = {
+    unicornhair:10,
+    gremlinshoes:2
+}
+let flight = {
+    unicornhair:10,
+    gremlinshoes:2,
+    fairydust:3
+}
+let love = {
+    cupidscloak:4,
+    fairydust:1
+}
+
+// console.log(mixedPotions([flight,invisibility,flight, love, love]))
+
+let dash = {
+    name:'dash',
+    time:'2:07:16hrs'
+}
+let bullseye = {
+    name:'bullseye',
+    time:'2:08:16hrs'
+}
+let chirp = {
+    name:'chirp',
+    time:'1:00:12hrs'
+}
+let mac = {
+    name:'mac',
+    time:'0:59:16hrs'
+}
+let zero = {
+    name:'zero',
+    time:'0:40:16hrs'
+}
+
+var winner = function(horseArray){
+    let winner = ''
+    let winnerHours = Infinity
+    let winnerMinutes = Infinity
+    let winnerSeconds = Infinity
+    let loser = ''
+    let loserHours = Infinity
+    let loserMinutes = Infinity
+    let loserSeconds = Infinity
+    for(let i = 0; i<horseArray.length; i++){
+        let timeArray = horseArray[i].time.replace('hrs', '', horseArray[i].time).split(':')
+        timeArray[0] = parseInt(timeArray[0])
+        timeArray[1] = parseInt(timeArray[1])
+        timeArray[2] = parseInt(timeArray[2])
+        console.log(timeArray[0])
+        if(timeArray[0]<winnerHours){
+            loserHours = winnerHours
+            loserMinutes = winnerMinutes
+            loserSeconds = winnerSeconds
+            loser = winner
+            winnerHours = timeArray[0]
+            winnerMinutes = timeArray[1]
+            winnerSeconds = timeArray[2]
+            winner = horseArray[i].name
+        }
+        else if(timeArray[0]<=winnerHours && timeArray[1]<winnerMinutes){
+            loserHours = winnerHours
+            loserMinutes = winnerMinutes
+            loserSeconds = winnerSeconds
+            loser = winner
+            winnerHours = timeArray[0]
+            winnerMinutes = timeArray[1]
+            winnerSeconds = timeArray[2]
+            winner = horseArray[i].name
+        }
+        else if(timeArray[0]<=winnerHours && timeArray[1]<=winnerMinutes && timeArray[2]<winnerSeconds){
+            loserHours = winnerHours
+            loserMinutes = winnerMinutes
+            loserSeconds = winnerSeconds
+            loser = winner
+            winnerHours = timeArray[0]
+            winnerMinutes = timeArray[1]
+            winnerSeconds = timeArray[2]
+            winner = horseArray[i].name
+        }else if(timeArray[0]<loserHours){
+            console.log(timeArray[0],loserHours)
+            console.log('you made it')
+            loserHours = timeArray[0]
+            loserMinutes = timeArray[1]
+            loserSeconds = timeArray[2]  
+            loser = horseArray[i].name 
+        }
+        else if(timeArray[0]<=loserHours && timeArray[1]<loserMinutes){
+            console.log('you made it')
+            loserHours = timeArray[0]
+            loserMinutes = timeArray[1]
+            loserSeconds = timeArray[2]  
+            loser = horseArray[i].name 
+        }
+        else if(timeArray[0]<=loserHours && timeArray[1]<=loserMinutes && timeArray[2]<loserSeconds){
+            loserHours = timeArray[0]
+            loserMinutes = timeArray[1]
+            loserSeconds = timeArray[2]   
+            loser = horseArray[i].name 
+        }
+    }
+
+    return `The winner is ${winner} and he beat ${loser} by ${loserHours-winnerHours} hours ${loserMinutes-winnerMinutes} minutes, and ${loserSeconds-winnerSeconds} seconds`
+}
+
+// console.log(winner([dash, bullseye, chirp]))
